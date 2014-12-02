@@ -115,14 +115,14 @@ public class CustomFrameLayout extends FrameLayout {
 		return true;
 	}
 	
-private void pull(float diff){
-	int value = Math.round(diff / 2.0F);
-	if(mOrientation == Orientation.VERTICAL){
-		scrollTo(0, value);
-	}else if(mOrientation == Orientation.HORIZONTAL){
-		scrollTo(value, 0);
+	private void pull(float diff){
+		int value = Math.round(diff / 2.0F);
+		if(mOrientation == Orientation.VERTICAL){
+			scrollTo(0, value);
+		}else if(mOrientation == Orientation.HORIZONTAL){
+			scrollTo(value, 0);
+		}
 	}
-}
 	
 	private void smoothScrollTo(float diff){
 		int value = Math.round(diff / 2.0F);
