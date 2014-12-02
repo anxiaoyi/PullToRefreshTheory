@@ -115,14 +115,14 @@ public class CustomFrameLayout extends FrameLayout {
 		return true;
 	}
 	
-	private void pull(float diff){
-		int value = Math.round(diff / 2.0F);
-		if(mOrientation == Orientation.VERTICAL){
-			scrollTo(0, value);
-		}else if(mOrientation == Orientation.HORIZONTAL){
-			scrollTo(value, 0);
-		}
+private void pull(float diff){
+	int value = Math.round(diff / 2.0F);
+	if(mOrientation == Orientation.VERTICAL){
+		scrollTo(0, value);
+	}else if(mOrientation == Orientation.HORIZONTAL){
+		scrollTo(value, 0);
 	}
+}
 	
 	private void smoothScrollTo(float diff){
 		int value = Math.round(diff / 2.0F);
@@ -151,12 +151,10 @@ public class CustomFrameLayout extends FrameLayout {
 			}else{
 				long normalizedTime = (1000 * (System.currentTimeMillis() - mStartTime)) / 200;
 				normalizedTime = Math.max(Math.min(normalizedTime, 1000), 0);
-
 				final int delta = Math.round((current - target)
 						* mInterpolator.getInterpolation(normalizedTime / 1000f));
 				
-				current = current - delta;
-				
+				current = current - delta;				
 				if(mOrientation == Orientation.HORIZONTAL){
 					scrollTo(current, 0);
 				}else if(mOrientation == Orientation.VERTICAL){
